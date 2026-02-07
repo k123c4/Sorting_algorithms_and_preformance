@@ -19,12 +19,19 @@ public class Tester {
      * Creates an array of integers of the given size, fills it with random numbers,
      * runs sorty, and returns the elapsed time in milliseconds.
      */
-    public double singleTest(int size) {
+    public double singleTest(int size, boolean useKSorted) {
+            int[] data = new int[size];
+//        //  Generate random data
+//        int[] data = new int[size];
+//        for (int i = 0; i < size; i++) {
+//            data[i] = rng.nextInt();
+//        }
 
-        //  Generate random data
-        int[] data = new int[size];
-        for (int i = 0; i < size; i++) {
-            data[i] = rng.nextInt();
+        // k sorted generate data
+        if (useKSorted) {
+            KSortedGenerator.generateKSorted(data); // 10-sorted
+        } else {
+            for (int i = 0; i < size; i++) data[i] = rng.nextInt(); // random
         }
 
         // Time the sorting call
