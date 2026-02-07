@@ -54,7 +54,7 @@ public class Tester {
 
         double totalMs = 0.0;
         for (int i = 0; i < iterations; i++) {
-            totalMs += singleTest(size);
+            totalMs += singleTest(size, true);
         }
 
         double avgMs = totalMs / iterations;

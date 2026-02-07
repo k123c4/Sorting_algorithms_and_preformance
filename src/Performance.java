@@ -49,7 +49,7 @@ public class Performance {
     private static double averageMs(Tester tester, int iterations, int size) {
         double total = 0.0;
         for (int i = 0; i < iterations; i++) {
-            total += tester.singleTest(size);
+            total += tester.singleTest(size, true);
         }
         return total / iterations;
     }
